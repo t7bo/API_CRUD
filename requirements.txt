@@ -1,0 +1,7 @@
+fastapi[all]
+uvicorn
+sqlalchemy
+sqlmodel
+pyodbc
+pydantic
+python-jose
