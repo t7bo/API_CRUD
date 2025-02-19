@@ -1,12 +1,16 @@
 from fastapi import FastAPI
-from app.models import Product
-from app.routes import product_router
-from app.database import create_db
+from routes import router
+from database import create_db
 
+# Création de l'application FastAPI
 app = FastAPI()
 
-# Inclus les routes
-app.include_router(product_router)
-
-# Crée la base de données
+# Lancer la création de la base de données
 create_db()
+
+# Inclure les routes
+app.include_router(router)
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=8000)
